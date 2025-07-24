@@ -1,0 +1,4 @@
+
+name = "zwanski-tech-api"
+compatibility_date = "2025-07-24"
+main = "functions/chatbot.js"
