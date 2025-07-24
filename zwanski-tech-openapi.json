@@ -1,0 +1,184 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Zwanski Tech API",
+    "version": "1.0.0",
+    "description": "AI-powered API routes for Zwanski Tech. Includes tools for chatbot, resume enhancement, content generation, and more."
+  },
+  "servers": [
+    {
+      "url": "https://api.zwanski.org",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/chatbot": {
+      "post": {
+        "summary": "Chat with AI",
+        "operationId": "postChatbotMessage",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Hello, what can you do?"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "AI reply",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "reply": {
+                      "type": "string",
+                      "example": "Hi! I'm your assistant."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/resume-enhancer": {
+      "post": {
+        "summary": "Enhance a resume",
+        "operationId": "postResumeEnhancer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "resume": {
+                    "type": "string",
+                    "example": "Experienced developer with..."
+                  },
+                  "jobTitle": {
+                    "type": "string",
+                    "example": "Frontend Developer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Enhanced resume result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "enhancedResume": {
+                      "type": "string",
+                      "example": "Optimized for job title..."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/content-generator": {
+      "post": {
+        "summary": "Generate blog or content",
+        "operationId": "postContentGenerator",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "topic": {
+                    "type": "string",
+                    "example": "AI in Education"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "blog_intro"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Generated content",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "string",
+                      "example": "In today\u2019s world, AI is revolutionizing..."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/code-explainer": {
+      "post": {
+        "summary": "Explain a piece of code",
+        "operationId": "postCodeExplainer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "example": "def add(a, b): return a + b"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Explanation of the code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "explanation": {
+                      "type": "string",
+                      "example": "This function adds two numbers."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
